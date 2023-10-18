@@ -5,7 +5,17 @@
     {
       "file": "storage/connection.properties",
       "description": "1) This is the secret for which we will ask GitHub copilot to create a custom regular expression.\n2) Open Copilot for Chat window in the left hand pane and type in the below prompt \n    > \"create a regular expression for the string mona_value_abc123 where the string following value_ can be of any alphanumeric characters\"\n",
-      "line": 1
+      "line": 1,
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 5
+        },
+        "end": {
+          "line": 1,
+          "character": 22
+        }
+      }
     }
   ],
   "ref": "main"
