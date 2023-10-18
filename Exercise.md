@@ -45,7 +45,7 @@ For each secret, look at the options to close it and determine which one is most
 The secret key `mona_value_abc124` is hardcoded in the properties file. We will use GitHub Copilot chat to get a suggestion of a regular expression that can be fed into the GitHub Custom Patterns for Secret Scanning. This exercise will demonstrate how GitHub Copilot can assist users and security architects and administrators to create high fidelity regular expressions when enough context about a secret pattern is given to GitHub Copilot
 
 In the GitHUb Copilot for Chat window in the VS Code IDE, we can type in a prompt like below. Copilot will respond back with a regular expression pattern
-`help me create a regular expression for the following string mona_value_`
+`abhi-dutta: create a regular expression for the string mona_value_abc123 where the string following value_ can be of any alphanumeric characters`
 Copilot will respond back with a regular expression pattern as shown below in the screen grab
 
 ![image](https://github.com/advanced-security-demo/mona-gallery/assets/79184790/aa7e0f84-4589-4daa-9972-db0c6d80de7b)
