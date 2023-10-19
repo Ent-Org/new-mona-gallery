@@ -215,6 +215,8 @@ func (g Gallery) Update(profile *OctoProfile) error {
 	return nil
 }
 
+
+
 func (g Gallery) GetArtPiece(id int64) (*ArtPiece, error) {
 	db := GetDb()
 

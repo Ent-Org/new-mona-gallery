@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Lab - 1",
+  "steps": [
+    {
+      "file": "gallery/main.go",
+      "description": "This is the place where we will make changes for the Lab - 1 as part of our exercise",
+      "line": 218
+    },
+    {
+      "file": "gallery/main.go",
+      "description": "Here we will try to ask GitHub Copilot a prompt to delete an art piece from the Gallery table based on the title name and gallery id. \n\nPrompt example:\n// write a function that deletes a record from the gallery table based on the gallery id and title name\n\nfunc (g Gallery) DeleteGallery(title string) error {\n\tdb := GetDb()\n\tstmt, err := db.Prepare(\"DELETE FROM gallery WHERE title = ? and id = ?\")\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer stmt.Close()\n}\n",
+      "line": 219
+    }
+  ],
+  "ref": "main"
+}
