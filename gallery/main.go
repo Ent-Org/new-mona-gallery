@@ -195,7 +195,7 @@ func (g *Gallery) Create(profile *OctoProfile) error {
 
 func (g Gallery) Update(profile *OctoProfile) error {
 	db := GetDb()
-	query := fmt.Sprintf("UPDATE gallery SET title = '%s', description = '%s' WHERE id = %d and login = '%s'", g.Title, g.Description, g.ID, profile.Login)
+	query := "UPDATE gallery SET title = ?, description = ? WHERE id = ? and login = ?"
 
 	stmt, err := db.Prepare(query)
 	if err != nil {
@@ -203,7 +203,7 @@ func (g Gallery) Update(profile *OctoProfile) error {
 	}
 	defer stmt.Close()
 
-	r, err := stmt.Exec()
+	r, err := stmt.Exec(g.Title, g.Description, g.ID, profile.Login)
 	if err != nil {
 		return err
 	}
@@ -216,7 +216,7 @@ func (g Gallery) Update(profile *OctoProfile) error {
 }
 
 
-
+// write a function that deletes a record from the gallery table based on the id and title of the gallery
 func (g Gallery) GetArtPiece(id int64) (*ArtPiece, error) {
 	db := GetDb()
 
@@ -306,8 +306,7 @@ func (p *ArtPiece) Create(gallery Gallery) error {
 func (p ArtPiece) Update(gallery Gallery) error {
 	db := GetDb()
 
-	query := fmt.Sprintf("UPDATE art_piece SET title = '%s', description = '%s', stars = '%d', uri = '%s' WHERE id = %d and gallery_id = '%d'", p.Title, p.Description, p.Stars, p.Uri, p.ID, gallery.ID)
-	stmt, err := db.Prepare(query)
+	query := fmt.Sprintf("UPDATE art_piece SET title = '%s', description = '%s', stars = %d, uri = '%s' WHERE id = %d and gallery_id = %d", p.Title, p.Description, p.Stars, p.Uri, p.ID, gallery.ID)	stmt, err := db.Prepare(query)
 
 	if err != nil {
 		return err
