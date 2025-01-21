@@ -16,6 +16,7 @@
 ### Introduction
 
 This repository template contains the source code for the `Mona Gallery` vulnerable application and also step by step guidance on all the exercises that we are going to walk through in todays workshop.
+mona_gallery_xyz123
 
 ### Prerequisites
 
